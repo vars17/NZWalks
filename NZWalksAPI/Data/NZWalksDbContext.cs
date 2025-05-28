@@ -3,12 +3,12 @@ using NZWalksAPI.Models.Domain;
 
 namespace NZWalksAPI.Data
 {
-    public class NZWalksDBContext: DbContext
+    public class NZWalksDBContext : DbContext
     {
         //create constructor
-        public NZWalksDBContext(DbContextOptions dbContextOptions): base(dbContextOptions)
+        public NZWalksDBContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {
-            
+
         }
 
         //dbset is a ppty of dbcontextclass that represnets
