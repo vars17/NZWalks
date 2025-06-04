@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NZWalksAPI.CustomActionFilters;
@@ -11,7 +12,8 @@ using NZWalksAPI.Repositories;
 namespace NZWalksAPI.Controllers
 {
     [Route("api/[controller]")]   //route:whenever user enters this route 
-    [ApiController]               //along with appl.n url,it will be pointing to
+    [ApiController]
+    [Authorize]                 //along with appl.n url,it will be pointing to
                                   //this controller
                                   // :https://localhost:port/api/controller
     public class RegionsController : ControllerBase
@@ -31,6 +33,7 @@ namespace NZWalksAPI.Controllers
 
 
         [HttpGet]
+       
         public async Task<IActionResult> GetAll()
         {
             //get data from DB- domain models
